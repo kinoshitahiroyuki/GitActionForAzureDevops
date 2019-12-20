@@ -2,6 +2,8 @@ name: CI
 
 on: [push]
 
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,9 +12,9 @@ jobs:
     - name: Azure Pipelines Action
       uses: Azure/pipelines@releases/v1
       with:
-        # Fullyqualified URL to the Azure DevOps organization along with project name(eg, https://dev.azure.com/organization/project-name or https://server.example.com:8080/tfs/DefaultCollection/project-name)
-        azure-devops-project-url: 
-        # Name of the Azure Pipline to be triggered
-        azure-pipeline-name: 
-        # Paste personal access token of the user as value of secret variable:AZURE_DEVOPS_TOKEN
+        # 対象のプロジェクト名を含むAzreDevOpsの組織URL
+        azure-devops-project-url: https://dev.azure.com/kokoni-labo/kokoni-githubactions
+        # 対象のPipeline名
+        azure-pipeline-name: githubactiontest
+        # AzureDevopsのプライベートアクセストークン
         azure-devops-token: 
