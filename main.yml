@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        dotnet-version: ['3.0.100', '3.1.100-preview3-014645']
+        dotnet-version: ['3.0.100', '3.1.100']
     env:
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
@@ -25,8 +25,6 @@ jobs:
       run: dotnet format --check --dry-run
     - name: Build
       run: dotnet build -c Debug
-    - name: Test
-      run: dotnet test -c Debug --no-build
 
   pipeline:
     runs-on: ubuntu-latest
